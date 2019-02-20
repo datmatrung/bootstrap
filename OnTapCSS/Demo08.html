@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo menu 2 level</title>
+    <style type="text/css">
+        .menu, .sub-menu {
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+            width: 150px;
+        }
+
+        .menu li {
+            background-color: #cc3366;
+            color: #ffffff;
+            padding-left: 10px;
+            height: 35px;
+            line-height: 35px;
+        }
+
+        .menu li:hover {
+            background-color: #33cc66;
+        }
+
+        .sub-menu {
+            margin-left: 140px;
+            margin-top: -35px;
+            position: absolute;
+            visibility: hidden;
+        }
+
+        .sub-menu li {
+            background-color: #6633cc;
+        }
+
+        .menu li:hover .sub-menu{
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li>Menu 1</li>
+        <li>Menu 2
+            <ul class="sub-menu">
+                <li>Sub menu</li>
+                <li>Sub menu</li>
+                <li>Sub menu</li>
+            </ul>
+        </li>
+        <li>Menu 3</li>
+        <li>Menu 4</li>
+    </ul>
+</body>
+</html>

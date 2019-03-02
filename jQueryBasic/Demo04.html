@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: #cc3366;
+            color: #ffffff;
+            margin: 20px;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <button type="button">Click me</button>
+    <div>
+        Hello World!!!
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js.css"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("div").bind("mouseover",function(){
+                $(this).css("background-color","#6633cc");
+            });
+
+            $("div").bind("mouseout", function(){
+                $(this).css("background-color","#66cc33");
+            });
+
+            $("button").click(function(){
+                $("div").unbind("mouseover");
+                $("div").unbind("mouseout");
+
+                $("div").css("background-color", "#cc3366");
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Heading of document</h1>
+    <ul>
+        <li class="a">This is item 01</li>
+        <li class="a">This is item 02</li>
+        <li class="b">This is item 03</li>
+        <li class="b">This is item 04</li>
+    </ul>
+    <div>
+        <p class="a">This paragraph 01</p>
+        <p id="pos">This paragraph 02</p>
+        <p class="b">This paragraph 03</p>
+    </div>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+    <script src="js/jquery-3.3.1.min.js.css"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("h1").css("color","#cc3366");
+            $("#pos").css("background-color","#33cc66");
+            $(".a").css("border", "1px solid #3366cc");
+        });
+    </script>
+</body>
+</html>

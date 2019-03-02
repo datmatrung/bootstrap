@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="pos">
+        Item <b>01</b>
+    </div>
+    <div>Item 02</div>
+    <div>Item 03</div>
+    <div>Item 04</div>
+    <div>Item 05</div>
+
+    <script src="js/jquery-3.3.1.min.js.css"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var pos = $("#pos").html();
+            console.log(pos);
+            $("#pos").html("<h1>Hello</h1>");
+        });
+    </script>
+</body>
+</html>

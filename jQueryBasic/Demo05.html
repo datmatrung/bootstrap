@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: #cc3366;
+            color: #ffffff;
+            margin: 20px;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" id="btnShow">Show</button>
+    <button type="button" id="btnHide">Hide</button>
+    <button type="button">Fade In</button>
+    <button type="button">Fade Out</button>
+    <button type="button">Toggle</button>
+    <div>
+        Hello World!!!
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js.css"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#btnShow").click(function(){
+                $("div").show(300);
+            });
+
+            $("#btnHide").click(function(){
+                $("div").hide(500);
+            });
+
+            $("button:eq(2)").click(function(){
+                $("div").fadeIn(600);
+            });
+
+            $("button:eq(3)").click(function(){
+                $("div").fadeOut(800);
+            });
+
+            $("button:eq(4)").click(function(){
+                $("div").toggle(1000);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>Item 01</div>
+    <div>Item 02</div>
+    <div>Item 03</div>
+    <div>Item 04</div>
+    <div>Item 05</div>
+
+    <script src="js/jquery-3.3.1.min.js.css"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var size = $("div").length;
+            console.log(size);
+            
+            for(var i = 0; i < size; i++)
+            {
+                var content = $("div").get(i).innerText;
+                console.log(content);
+            }
+
+            console.log("-----------------------------");
+
+            $("div").each(function(){
+                var content = this.innerText;
+                console.log(content);
+            });
+        });
+    </script>
+</body>
+</html>

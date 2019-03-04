@@ -1,0 +1,17 @@
+h1 {
+    color: #cc3366;
+    text-align: center;
+    margin: 30px;
+}
+
+#btnThem {
+    margin: 10px;
+}
+
+button {
+    margin: 5px;
+}
+
+td,th {
+    line-height: 40px;
+}

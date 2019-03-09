@@ -39,13 +39,35 @@ function LoadData(){
 
         var tdThaoTacNode = $("<td></td>");
         var btnCapNhatNode = $("<button type='button' class='btn btn-primary btn-CapNhat' data-toggle='modal' data-target='#sanPhamModal' value='" + i + "'>Cập nhật</button>");
-        var btnXoaNode = $("<button type='button' class='btn btn-danger btn-Xoa' onclick='XoaSanPham(" + i + ")'>Xoá</button>");
+        var btnXoaNode = $("<button type='button' class='btn btn-danger btn-Xoa' value='" + i + "'>Xoá</button>");
         tdThaoTacNode.append(btnCapNhatNode);
         tdThaoTacNode.append(btnXoaNode);
         trNode.append(tdThaoTacNode);
 
         $("tbody").append(trNode);
         i++;
+
+        // Xử lý xự kiện click cho Button Cập nhật
+        btnCapNhatNode.click(function(){
+            var i = $(this).val();
+
+            viTriCapNhap = i;
+            
+            maSanPham = dsSanPham[i].Ma;
+            $("#MaSanPham").val(maSanPham);
+
+            $("#TenSanPham").val(dsSanPham[i].Ten);
+            $("#GiaSanPham").val(dsSanPham[i].Gia);
+
+            coButtonLuuThongTinSanPham = 1;
+        });
+
+        // Xử lý sự kiện click cho Button Xoá
+        btnXoaNode.click(function(){
+            var viTriXoa = btnCapNhatNode.val();
+            dsSanPham.splice(viTriXoa, 1);
+            LoadData();
+        });
     });
 }
 
@@ -73,11 +95,6 @@ function CapNhatThongTinSanPham(){
     }
 
     dsSanPham[viTriCapNhap] = sanPham;
-}
-
-function XoaSanPham(i) {
-    dsSanPham.splice(i, 1);
-    LoadData();
 }
 
 $(document).ready(function(){
@@ -108,17 +125,8 @@ $(document).ready(function(){
         LoadData();
     });
 
-    $(".btn-CapNhat").click(function(){
-        var i = $(this).val();
-
-        viTriCapNhap = i;
-        
-        maSanPham = dsSanPham[i].Ma;
-        $("#MaSanPham").val(maSanPham);
-
-        $("#TenSanPham").val(dsSanPham[i].Ten);
-        $("#GiaSanPham").val(dsSanPham[i].Gia);
-
-        coButtonLuuThongTinSanPham = 1;
+    $("#sanPhamModal").on("hidden.bs.modal", function(){
+        $("#TenSanPham").val("");
+        $("#GiaSanPham").val("");
     });
 });
